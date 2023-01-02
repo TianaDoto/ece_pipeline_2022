@@ -57,5 +57,5 @@ df_final = df_final.drop(*cols_to_drop)
 
 df_final.write.option("header",True) \
     .options(delimiter=";")\
-    .options(overwrite = True)\
+    .mode("overwrite")\
     .csv("/home/heritiana/Project/Projet_exam/data/tour2_par_departement")
