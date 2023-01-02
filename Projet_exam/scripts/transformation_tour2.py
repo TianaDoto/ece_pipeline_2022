@@ -13,6 +13,8 @@ filepath = "/home/heritiana/Project/Projet_exam/data/tour2.csv"
 
 pdf = pd.read_csv(filepath, header = 0, sep = ";", encoding="latin_1")  
 
+#creer un nouveau schema pour attribuer un nom au columns qui n ont pas de nom
+
 column = pdf.columns.tolist()
 temp_schema = []
 for i in range (len(column), 35):
@@ -49,6 +51,7 @@ df2 = df2.withColumn('row_index', row_number().over(Window.orderBy(monotonically
 #df3 contenant df1 et df2 cad df initial avec tous les candidats avec schema
 df_final = df2.join(df1, df2.row_index == df1.row_index, "outer").drop("row_index")
 
+#drop les columns qui ne sont pas pertinent (comme les pourcentage car on peut les calculer facilement au besoin)
 cols_to_drop = [c for c in df_final.columns if "%" in c]
 df_final = df_final.drop(*cols_to_drop)
 
