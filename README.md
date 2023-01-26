@@ -34,3 +34,4 @@ Quand on lance airflow, les dags vont s'executer un apres l autre.
 
 ## Conclusion
 On a decidé d'utiliser ces 2 fichiers car avec, on pourra voir dans quel departement/circonscription/commune un candidat X a maximisé les votes qu il/elle a eu et par la suite on pourra a la prochaine election essayer de maximiser les campagnes dans les autres regions sans pour autant delaissé la region ou il y avait un nombre elevé de voix
+.
